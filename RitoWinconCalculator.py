@@ -15,6 +15,8 @@ League of Legends Wincon Calculator
 reference stats from (leagueofgraphs.com/champions/) and (na.op.gg/champion/statistics)
 '''
 import championdb as champion
+import os
+
 b1,b2,b3,b4,b5 = ["" for _ in range(5)]
 r1,r2,r3,r4,r5 = ["" for _ in range(5)]
 
@@ -388,19 +390,26 @@ def dodgeORnah(wr):
     if wr <= 43:
         if abs(BlueWR - RedWR) >= 18:
             print("You have a HUGE disadvantage, dodge like the plague")
+            byeee = input("Do you want to dodge to save LP? ")
+            if byeee == 'yes':
+                print("Executing Order 66 on league client to save LP...")
+                os.system("taskkill /f /im  LeagueClient.exe")
+                print("Congrats, you saved yourself some LP\nBetter luck next time...")
+            if byeee == 'no':
+                print("Ok, that's your call")
 
 if BlueWR > RedWR:
-    if pickString == 'blue':
+    if pickString == 'blue side':
         print("You are more likely to win")
         dodgeORnah(BlueWR)
-    if pickString == 'red':
+    if pickString == 'red side':
         print("You are more likely to lose")
         dodgeORnah(RedWR)
 elif BlueWR < RedWR:
-    if pickString == 'blue':
+    if pickString == 'blue side':
         print("You are more likely to lose")
         dodgeORnah(BlueWR)
-    if pickString == 'red':
+    if pickString == 'red side':
         print("You are more likely to win")
         dodgeORnah(RedWR)
 else:
