@@ -1,4 +1,7 @@
-# All champion stats
+'''
+Database of all league champions
+Obtained from riot API
+'''
 
 championNames = ['aatrox', 'ahri', 'akali', 'alistar', 'amumu', 'anivia', 'annie', 'aphelios', 'ashe', 'aurelionsol',
                  'azir', 'bard', 'blitzcrank', 'brand', 'braum', 'caitlyn', 'camille', 'cassiopeia', 'chogath', 'corki',
@@ -28,7 +31,7 @@ championNames = ['aatrox', 'ahri', 'akali', 'alistar', 'amumu', 'anivia', 'annie
 def checkChamp(inputMsg):
     global validChamp
     while True:
-        userinputchampion = input(inputMsg)
+        userinputchampion = input(inputMsg).lower()
         if userinputchampion not in championNames:
             print("Not a valid champion, type again")
             continue
