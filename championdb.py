@@ -1,5 +1,5 @@
 '''
-Database of all league champions
+Database of all league champions v1.0 @austinyen56
 Obtained from riot API
 '''
 

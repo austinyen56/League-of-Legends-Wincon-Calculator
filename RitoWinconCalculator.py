@@ -1,8 +1,8 @@
 '''
-League of Legends Wincon Calculator @austinyen56
+League of Legends Wincon Calculator v1.0 @austinyen56
 All stats are from the riot api, (leagueofgraphs.com/champions/), and (na.op.gg/champion/statistics)
 
-
+Displays checks for matchup, healing, cc, and damage type
 '''
 import championdb as champion
 import os
@@ -431,4 +431,4 @@ else:
     print("Both sides are equal in win rates, better player wins!")
 
 print("\n")
-input("Click any key to exit")
+input("Click the enter key to exit...")
