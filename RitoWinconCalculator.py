@@ -1,5 +1,5 @@
 '''
-League of Legends Wincon Calculator v1.0 @austinyen56
+League of Legends Wincon Calculator v1.1 @austinyen56
 All stats are from the riot api, (leagueofgraphs.com/champions/), and (na.op.gg/champion/statistics)
 
 Displays checks for matchup, healing, cc, and damage type
@@ -10,7 +10,7 @@ import os
 b1, b2, b3, b4, b5 = ["" for _ in range(5)]
 r1, r2, r3, r4, r5 = ["" for _ in range(5)]
 
-print("===============Team comp win con calculator===============")
+print("===============Team comp win con calculator v1.1 @austinyen56===============")
 print("------Please type everything in lowercase in one word---------\n")
 # -----------------Sorting team comp-------------
 whatpick = True

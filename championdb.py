@@ -1,8 +1,8 @@
 '''
-Database of all league champions v1.0 @austinyen56
+Database of all league champions v1.1 @austinyen56
 Obtained from riot API
 '''
-
+import difflib
 championNames = ['aatrox', 'ahri', 'akali', 'alistar', 'amumu', 'anivia', 'annie', 'aphelios', 'ashe', 'aurelionsol',
                  'azir', 'bard', 'blitzcrank', 'brand', 'braum', 'caitlyn', 'camille', 'cassiopeia', 'chogath', 'corki',
                  'darius', 'diana', 'draven', 'drmundo', 'ekko', 'elise', 'evelynn', 'ezreal', 'fiddlesticks', 'fiora',
@@ -28,12 +28,46 @@ championNames = ['aatrox', 'ahri', 'akali', 'alistar', 'amumu', 'anivia', 'annie
 #    else:
 #        print("ur champ name is ", champion)
 
+def champSpellCheck(c):
+    c = c.lower()
+    CM = difflib.get_close_matches(c, championNames)
+    if CM == [] or c == 'asol' or c == 'monkey' or c == 'monkas' or c == 'trash' or c == 'trashcan' or c == 'satan':
+        if c == 'ww':
+            print("Did you mean: 'warwick'?")
+        if c == 'asol':
+            print("Did you mean: 'aurelionsol'?")
+        if c == 'ez':
+            print("Did you mean: 'ezreal'?")
+        if c == 'gp':
+            print("Did you mean: 'gangplank'?")
+        if c == 'hiemer':
+            print("Did you mean: 'heimerdinger'?")
+        if c == '4':
+            print("Did you mean: 'jhin'?")
+        if c == 'lb':
+            print("Did you mean: 'leblanc'?")
+        if c == 'rock':
+            print("Did you mean: 'malphite'?")
+        if c == 'monkey' or c == 'monkas' or c == 'monkeyking':
+            print("Did you mean: 'wukong'?")
+        if c == 'vb':
+            print("Did you mean: 'volibear'?")
+        if c == 'trashcan' or c == 'trash' or c == 'trashbag' or c == 'cancer':
+            print("Did you mean: 'yasuo'?")
+        if c == 'satan' or c == 'devil':
+            print("Did you mean: 'teemo'?")
+        if c == 'tf':
+            print("Did you mean: 'twistedfate'?")
+    else:
+        print(f"Did you mean: '{CM}'?")
+
 def checkChamp(inputMsg):
     global validChamp
     while True:
         userinputchampion = input(inputMsg).lower()
         if userinputchampion not in championNames:
             print("Not a valid champion, type again")
+            champSpellCheck(userinputchampion)
             continue
         validChamp = userinputchampion
         break
