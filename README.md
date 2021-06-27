@@ -1,9 +1,3 @@
----
-noteId: "f2dfcf50d6e911eba455e9950f966237"
-tags: []
-
----
-
 # League of Legends Wincon Calculator
 [![Python 3.7.9](https://img.shields.io/badge/python-3.7.9-blue.svg)](https://www.python.org/downloads/release/python-374/)
 
