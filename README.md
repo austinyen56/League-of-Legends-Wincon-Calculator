@@ -6,6 +6,7 @@ Wanna predict if you will win or not in your current game of league? This progra
 
 ## How to run this program
 * You can  run the program using the .exe file presented in the releases, just simply download and double click
+* For Mac, remember to do ```chmod +x [filename]```
 * You can also run the python file by ```python3 RitoWinconCalculator.py```
 * The given input statements are pretty self explanatory. Please enter champion names all connected and without spaces. Eg: type "Kha' Zix" as "khazix", "Dr. Mundo" as "drmundo"
 
