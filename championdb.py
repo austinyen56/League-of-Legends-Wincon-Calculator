@@ -3,7 +3,7 @@ Database of all league champions v1.1 @austinyen56
 Obtained from riot API
 '''
 import difflib
-championNames = ['aatrox', 'ahri', 'akali', 'alistar', 'amumu', 'anivia', 'annie', 'aphelios', 'ashe', 'aurelionsol',
+championNames = ['aatrox', 'ahri', 'akali', 'akshan', 'alistar', 'amumu', 'anivia', 'annie', 'aphelios', 'ashe', 'aurelionsol',
                  'azir', 'bard', 'blitzcrank', 'brand', 'braum', 'caitlyn', 'camille', 'cassiopeia', 'chogath', 'corki',
                  'darius', 'diana', 'draven', 'drmundo', 'ekko', 'elise', 'evelynn', 'ezreal', 'fiddlesticks', 'fiora',
                  'fizz', 'galio', 'gangplank', 'garen', 'gnar', 'gragas', 'graves', 'gwen', 'hecarim', 'heimerdinger',
@@ -16,12 +16,12 @@ championNames = ['aatrox', 'ahri', 'akali', 'alistar', 'amumu', 'anivia', 'annie
                  'rumble', 'ryze', 'samira', 'sejuani', 'senna', 'seraphine', 'sett', 'shaco', 'shen', 'shyvana',
                  'singed', 'sion', 'sivir', 'skarner', 'sona', 'soraka', 'swain', 'sylas', 'syndra', 'tahmkench',
                  'taliyah', 'talon', 'taric', 'teemo', 'thresh', 'tristana', 'trundle', 'tryndamere', 'twistedfate',
-                 'twitch', 'udyr', 'urgot', 'varus', 'vayne', 'veigar', 'velkoz', 'vi', 'viego', 'viktor', 'vladimir',
-                 'volibear', 'warwick', 'xayah', 'xerath', 'xinzhao', 'yasuo', 'yone', 'yorick', 'yuumi', 'zac', 'zed',
+                 'twitch', 'udyr', 'urgot', 'varus', 'vayne', 'veigar', 'velkoz', 'vex', 'vi', 'viego', 'viktor', 'vladimir',
+                 'volibear', 'warwick', 'xayah', 'xerath', 'xinzhao', 'yasuo', 'yone', 'yorick', 'yuumi', 'zac', 'zed', 'zeri',
                  'ziggs', 'zilean', 'zoe', 'zyra']
 
 
-#
+# akshan, vex, zeri
 # def championStats(champion):
 #    if champion not in championNames:
 #        print("not a champion")
@@ -112,6 +112,17 @@ CHAMPION = {
         "role": 'mage',
         "counters": ['kled', 'renekton', 'lissandra', 'annie', 'lucian'],
         "crushes": ['syndra', 'kayle', 'malphite', 'gwen', 'xerath'],
+    },
+    "akshan": {
+        "mainRole": 'mid',
+        "altRole": 'top',
+        "cc": '0',
+        "knockup": '0',
+        "healing": '3',
+        "dmgtype": 'ad',
+        "role": 'marksman',
+        "counters": ['anivia', 'veigar', 'cassiopeia'],
+        "crushes": ['zeri', 'corki'],
     },
     "alistar": {
         "mainRole": 'supp',
@@ -1566,6 +1577,17 @@ CHAMPION = {
         "counters": ['zed', 'yasuo', 'soraka', 'yuumi'],
         "crushes": ['alistar', 'nautilus']
     },
+    "vex": {
+        "mainRole": 'mid',
+        "altRole": 'none',
+        "cc": '2',
+        "knockup": '1',
+        "healing": '0',
+        "dmgtype": 'ap',
+        "role": 'mage',
+        "counters": ['velkoz','veigar', 'anivia'],
+        "crushes": ['lissandra', 'leblanc']
+    },
     "vi": {
         "mainRole": 'jg',
         "altRole": 'none',
@@ -1741,6 +1763,17 @@ CHAMPION = {
         "role": 'asssassin',
         "counters": ['irelia', 'heimerdinger', 'kayle'],
         "crushes": ['veigar', 'lucian', 'ryze', 'annie']
+    },
+    "zeri": {
+        "mainRole": 'adc',
+        "altRole": 'top',
+        "cc": '0',
+        "knockup": '0',
+        "healing": '0',
+        "dmgtype": 'ad',
+        "role": 'marksman',
+        "counters": ['ziggs', 'ezreal'],
+        "crushes": ['']
     },
     "ziggs": {
         "mainRole": 'mid',
