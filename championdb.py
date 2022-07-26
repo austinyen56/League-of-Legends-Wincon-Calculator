@@ -4,15 +4,15 @@ Obtained from riot API
 '''
 import difflib
 championNames = ['aatrox', 'ahri', 'akali', 'akshan', 'alistar', 'amumu', 'anivia', 'annie', 'aphelios', 'ashe', 'aurelionsol',
-                 'azir', 'bard', 'blitzcrank', 'brand', 'braum', 'caitlyn', 'camille', 'cassiopeia', 'chogath', 'corki',
+                 'azir', 'bard', 'belveth', 'blitzcrank', 'brand', 'braum', 'caitlyn', 'camille', 'cassiopeia', 'chogath', 'corki',
                  'darius', 'diana', 'draven', 'drmundo', 'ekko', 'elise', 'evelynn', 'ezreal', 'fiddlesticks', 'fiora',
                  'fizz', 'galio', 'gangplank', 'garen', 'gnar', 'gragas', 'graves', 'gwen', 'hecarim', 'heimerdinger',
                  'illaoi', 'irelia', 'ivern', 'janna', 'jarvan', 'jax', 'jayce', 'jhin', 'jinx', 'kaisa', 'kalista',
                  'karma', 'karthus', 'kassadin', 'katarina', 'kayle', 'kayn', 'kennen', 'khazix', 'kindred', 'kled',
                  'kogmaw', 'leblanc', 'leesin', 'leona', 'lillia', 'lissandra', 'lucian', 'lulu', 'lux', 'malphite',
                  'malzahar', 'maokai', 'masteryi', 'missfortune', 'wukong', 'mordekaiser', 'morgana', 'nami', 'nasus',
-                 'nautilus', 'neeko', 'nidalee', 'nocturne', 'nunu', 'olaf', 'orianna', 'ornn', 'pantheon', 'poppy',
-                 'pyke', 'qiyana', 'quinn', 'rakan', 'rammus', 'reksai', 'rell', 'renekton', 'rengar', 'riven',
+                 'nautilus', 'neeko', 'nidalee', 'nilah', 'nocturne', 'nunu', 'olaf', 'orianna', 'ornn', 'pantheon', 'poppy',
+                 'pyke', 'qiyana', 'quinn', 'rakan', 'rammus', 'reksai', 'rell', 'renata', 'renekton', 'rengar', 'riven',
                  'rumble', 'ryze', 'samira', 'sejuani', 'senna', 'seraphine', 'sett', 'shaco', 'shen', 'shyvana',
                  'singed', 'sion', 'sivir', 'skarner', 'sona', 'soraka', 'swain', 'sylas', 'syndra', 'tahmkench',
                  'taliyah', 'talon', 'taric', 'teemo', 'thresh', 'tristana', 'trundle', 'tryndamere', 'twistedfate',
@@ -222,6 +222,17 @@ CHAMPION = {
         "role": 'mage',
         "counters": ['brand', 'zilean', 'zyra', 'pyke'],
         "crushes": ['alistar', 'blitzcrank', 'senna', 'braum', 'rakan'],
+    },
+    "belveth": {
+        "mainRole": 'jg',
+        "altRole": 'none',
+        "cc": '5',
+        "knockup": '1',
+        "healing": '4',
+        "dmgtype": 'ad',
+        "role": 'fighter',
+        "counters": ['jax'],
+        "crushes": [''],
     },
     "blitzcrank": {
         "mainRole": 'supp',
@@ -994,6 +1005,17 @@ CHAMPION = {
         "counters": ['masteryi', 'rengar', 'vi'],
         "crushes": ['rammus', 'zac', 'rumble', 'graves']
     },
+    "nilah": {
+        "mainRole": 'adc',
+        "altRole": 'mid',
+        "cc": '5',
+        "knockup": '1',
+        "healing": '3',
+        "dmgtype": 'ad',
+        "role": 'fighter',
+        "counters": [''],
+        "crushes": ['']
+    },
     "nocturne": {
         "mainRole": 'jg',
         "altRole": 'none',
@@ -1145,6 +1167,17 @@ CHAMPION = {
         "healing": '0',
         "dmgtype": 'ad',
         "role": 'tank',
+        "counters": ['senna', 'nami', 'morgana', 'lux'],
+        "crushes": ['blitzcrank', 'pyke']
+    },
+    "renata": {
+        "mainRole": 'supp',
+        "altRole": 'none',
+        "cc": '8',
+        "knockup": '1',
+        "healing": '0',
+        "dmgtype": 'ap',
+        "role": 'mage',
         "counters": ['senna', 'nami', 'morgana', 'lux'],
         "crushes": ['blitzcrank', 'pyke']
     },
