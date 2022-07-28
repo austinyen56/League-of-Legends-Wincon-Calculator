@@ -9,6 +9,7 @@ import championdb as champion
 import os
 import pyperclip
 import sys
+#import ritoapi
 
 # Initialzing variables blue1 - blue5, red1 - red5
 b1, b2, b3, b4, b5 = ["" for _ in range(5)]
@@ -95,6 +96,8 @@ def roleCorrection(x):
     if x == "jungle":
         print("Type 'jg' instead\n")
 
+# Clears everything in outfile just in case
+open('outfile.txt', 'w').close()
 # Function that ONLY prints to outfile
 def ONLYprintingtoFile(*content):       
         originalOut = sys.stdout
@@ -161,7 +164,7 @@ def roleCheck():
     # ======================================= Analyitics, Calculating, and Printing =============================
     
     print("\n")
-    ONLYprintingtoFile("===============Generated from LoL Wincon Calculator v2.0 @austinyen56===============")
+    ONLYprintingtoFile("===============Generated from LoL Wincon Calculator v2.3 @austinyen56===============")
     printConsoleandOutfile("          =================Matchup=================")
 
     def get_champion_from_pos(val, x):
@@ -187,12 +190,16 @@ def roleCheck():
     for r in sortroles:
         champPrintB.append(get_champion_from_pos(r, champRoleB))
         champPrintR.append(get_champion_from_pos(r, champRoleR))
+    
+    # Enable for debugging -> [top, mid, jg, adc, supp]
     print(champPrintB)
     print(champPrintR)
 
 def autoRoleSort()-> List:
     #['garen', 'rammus', 'khazix', 'sivir', 'thresh'] top mid jg adc supp
     #['vladimir', 'twistedfate', 'volibear', 'ashe', 'senna']
+    #import ritoapi
+    #ritoapi
     pass
 
 
@@ -497,6 +504,6 @@ def copytoClipboard():
 
 if input("Do you want to copy to clipboard? (y/n): ") == "y":
     copytoClipboard()
-    print("Copied to clipboard!")
+    print("Copied to clipboard!\n")
 
-input("Click the enter key to exit...")
+input("Click the ENTER key to exit...")
