@@ -1,0 +1,35 @@
+===============Generated from LoL Wincon Calculator v2.3 @austinyen56===============
+          =================Matchup=================
+Top    :volibear............vs...............karma
+Mid    :viktor..............vs................nunu
+Jungle :hecarim.............vs...............viego
+ADC    :caitlyn.............vs..............ezreal
+Supp    :sion................vs...............senna
+          =================Stats=================
+volibear is an even matchup to karma
+viktor is an even matchup to nunu
+hecarim is an even matchup to viego
+caitlyn might be countered by ezreal
+sion is an even matchup to senna
+          =================Healing Check=================
+          ----------------You are on blue side----------
+Blue team might have to get healing reduction items
+Blue team heal score: 7
+Red team heal score: 14
+          =================CC Check=================
+          ----------------You are on blue side----------
+Blue team has alot of cc, play for teamfights
+Blue team can potentially make a wombo combo
+Blue team CC score: 17
+Red team CC score: 14
+Blue team knockup score: 3
+Red team knockup score: 1
+          =================Team Comp Check=================
+          ----------------You are onblue side----------
+Both teams have equal amount of tanks or fighters
+          =================Dmg Type Check=================
+          ----------------You are onblue side----------
+Blue side has too much ad
+Blue WR: 50%
+Red WR: 58%
+You are more likely to lose
