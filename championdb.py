@@ -1,5 +1,5 @@
 '''
-Database of all league champions v1.1 @austinyen56
+Database of all league champions v1.5 @austinyen56
 Obtained from riot API
 '''
 import difflib
@@ -21,7 +21,6 @@ championNames = ['aatrox', 'ahri', 'akali', 'akshan', 'alistar', 'amumu', 'anivi
                  'ziggs', 'zilean', 'zoe', 'zyra']
 
 
-# akshan, vex, zeri
 # def championStats(champion):
 #    if champion not in championNames:
 #        print("not a champion")
