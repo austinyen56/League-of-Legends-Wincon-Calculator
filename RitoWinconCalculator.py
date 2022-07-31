@@ -1,5 +1,5 @@
 '''
-League of Legends Wincon Calculator v2.3 @austinyen56
+League of Legends Wincon Calculator v2.4 @austinyen56
 All stats are from the RiotWatcher API, LCU API, (leagueofgraphs.com/champions/), and (na.op.gg/champion/statistics)
 
 Displays checks for matchup, healing, cc, and damage type
@@ -9,13 +9,13 @@ import championdb as champion
 import os
 import pyperclip
 import sys
-#import ritoapi
+import ritoapi
 
 # Initialzing variables blue1 - blue5, red1 - red5
 b1, b2, b3, b4, b5 = ["" for _ in range(5)]
 r1, r2, r3, r4, r5 = ["" for _ in range(5)]
 
-print("=============== LoL Wincon Calculator v2.3 @austinyen56 ===============")
+print("=============== LoL Wincon Calculator v2.4 @austinyen56 ===============")
 print("------Please type everything in lowercase in one word---------\n")
 
 # -----------------Sorting team comp-------------
@@ -163,8 +163,11 @@ def roleCheck():
     
     # ======================================= Analyitics, Calculating, and Printing =============================
     
+    def formatPrintMatchup():
+        pass
+
     print("\n")
-    ONLYprintingtoFile("===============Generated from LoL Wincon Calculator v2.3 @austinyen56===============")
+    ONLYprintingtoFile("===============Generated from LoL Wincon Calculator v2.4 @austinyen56===============")
     printConsoleandOutfile("          =================Matchup=================")
 
     def get_champion_from_pos(val, x):
@@ -195,16 +198,49 @@ def roleCheck():
     print(champPrintB)
     print(champPrintR)
 
-def autoRoleSort()-> List:
+def autoRoleSort(side):
     #['garen', 'rammus', 'khazix', 'sivir', 'thresh'] top mid jg adc supp
     #['vladimir', 'twistedfate', 'volibear', 'ashe', 'senna']
-    #import ritoapi
-    #ritoapi
-    pass
+    allyAPI, enemyAPI = ritoapi.ClientFetch()
+    enemySort = {}
+    enemyAPISorted = []
 
+    i = 0
+    while i < len(enemyAPI):
+        print("\nPlease input the following roles for each enemy since Riot's API does not support such data:")
+        eRole = input(f"What role is {enemyAPI[i]}: ")
+        if eRole == "top" or eRole == "mid" or eRole == "adc" or eRole == "supp" or eRole == "jg":
+            for j in enemySort.keys():
+                if eRole in j:
+                    print("There is already a", eRole)
+                    i -= 1
+                    continue
+            enemySort[eRole] = enemyAPI[i]
+            i += 1
+        else:
+            print("Not a valid role")
+            roleCorrection(eRole)
+            continue
+    try:
+        enemyAPISorted = [enemySort['top'], enemySort['mid'], enemySort['jg'], enemySort['adc'], enemySort['supp']]
+    except KeyError:
+        enemyAPISorted = enemySort
+
+
+    if side == 'yes':
+        champPrintB = allyAPI
+        champPrintR = enemyAPISorted
+    elif side == 'no':
+        champPrintB = enemyAPISorted
+        champPrintR = allyAPI
+    
+    return champPrintB, champPrintR
+
+    
 
 def manualorauto():
-
+    global champPrintB
+    global champPrintR
     modeBool = True
     while modeBool:
         mode = input("Do you want to enter champs and roles manually or automatically? (manual/auto): ")
@@ -222,19 +258,28 @@ def manualorauto():
 
         elif mode == "auto":
             modeBool = False
-            autoRoleSort()
+            champPrintB, champPrintR = autoRoleSort(pick)
+            # Same as line 178, to add in the matchup stats, can consolidate/optimize in the future
+            ONLYprintingtoFile("===============Generated from LoL Wincon Calculator v2.4 @austinyen56===============")
+            print("")
+            printConsoleandOutfile("          =================Matchup=================")
+            count = 0
+            for lane in ["Top    ", "Mid    ", "Jungle ", "ADC    ", "Supp    "]:
+                printConsoleandOutfile(lane,":", champPrintB[count].ljust(20, "."), "vs".center(0),
+                          champPrintR[count].rjust(20, "."))
+                count += 1
+            
         else:
             print("Not a valid input")
             continue
+    return champPrintB, champPrintR
 
 
-manualorauto()
+champPrintB, champPrintR = manualorauto()
 
+#print(champPrintB)
+#print(champPrintR)
 
-
-
-    
-    
 
 # ------------------------------Calculate winrate-----------------------------
 # start off with 50% wr on each side
@@ -251,8 +296,8 @@ RedWR = 50
 
 print("\n")
 printConsoleandOutfile("          =================Stats=================")
-# print(champPrintB)
-# print(champPrintR)
+#print(champPrintB)
+#print(champPrintR)
 # print(champion.CHAMPION.get("aatrox"))
 
 for i in range(5):
@@ -353,7 +398,7 @@ printConsoleandOutfile("Red team knockup score: ", str(RedKnockupTotal))
 
 print("\n")
 printConsoleandOutfile("          =================Team Comp Check=================")
-printConsoleandOutfile("          ----------------You are on", pickString, "----------")
+printConsoleandOutfile("          ----------------You are on ", pickString, "----------")
 AllBlueRoles = [champion.CHAMPION.get(champPrintB[b]).get("role") for b in range(len(champPrintB))]
 AllRedRoles = [champion.CHAMPION.get(champPrintR[r]).get("role") for r in range(len(champPrintR))]
 BRFreq = {}
@@ -406,7 +451,7 @@ if freq == False:
 
 print("\n")
 printConsoleandOutfile("          =================Dmg Type Check=================")
-printConsoleandOutfile("          ----------------You are on", pickString, "----------")
+printConsoleandOutfile("          ----------------You are on ", pickString, "----------")
 AllBlueDmg = [champion.CHAMPION.get(champPrintB[b]).get("dmgtype") for b in range(len(champPrintB))]
 AllRedDmg = [champion.CHAMPION.get(champPrintR[r]).get("dmgtype") for r in range(len(champPrintR))]
 BDTotal = {}
@@ -468,7 +513,10 @@ def dodgeORnah(wr):
             byeee = input("Do you want to dodge to save LP? ")
             if byeee == 'yes':
                 print("Executing Order 66 on league client to save LP...")
-                os.system("taskkill /f /im  LeagueClient.exe")
+                if sys.platform == 'win32':
+                    os.system("taskkill /f /im  LeagueClient.exe")
+                if sys.platform == 'darwin':
+                    os.system("killall LeagueClient")
                 print("Congrats, you saved yourself some LP\nBetter luck next time...")
             if byeee == 'no':
                 print("Ok, that's your call")
@@ -502,8 +550,9 @@ def copytoClipboard():
     
     pyperclip.copy(result)
 
-if input("Do you want to copy to clipboard? (y/n): ") == "y":
+if input("Do you want to copy results to clipboard? (y/n): ") == "y":
     copytoClipboard()
     print("Copied to clipboard!\n")
 
 input("Click the ENTER key to exit...")
+
