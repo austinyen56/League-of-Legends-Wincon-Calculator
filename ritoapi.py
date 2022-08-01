@@ -20,10 +20,20 @@ async def ChampSelect(connection, event):
         print('\nIn finalization phase:\n')
 
         for player in event.data['myTeam']:
-            resultAlly[player['assignedPosition']] = c2n(player['championId'])
+            if c2n(player['championId']) == 'monkeyking':
+                resultAlly[player['assignedPosition']] = 'wukong'
+            elif c2n(player['championId']) == 'jarvaniv':
+                resultAlly[player['assignedPosition']] = 'jarvan'
+            else:
+                resultAlly[player['assignedPosition']] = c2n(player['championId'])
 
         for enemy in event.data['theirTeam']:
-            resultSortedEnemy.append(c2n(enemy['championId']))
+            if c2n(enemy['championId']) == 'monkeyking':
+                resultSortedEnemy.append('wukong')
+            elif c2n(enemy['championId']) == 'jarvaniv':
+                resultSortedEnemy.append('jarvan')
+            else:
+                resultSortedEnemy.append(c2n(enemy['championId']))
         # Used try/except to avoid errors when roles are not assigned to allies (e.g. during a custom game/ special gamemode/ aram)
         # Enemies will never show assigned positions, and enemy champids will not even show in special gamemodes
         try:

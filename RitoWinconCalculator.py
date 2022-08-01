@@ -1,5 +1,5 @@
 '''
-League of Legends Wincon Calculator v2.4 @austinyen56
+League of Legends Wincon Calculator v2.5 @austinyen56
 All stats are from the RiotWatcher API, LCU API, (leagueofgraphs.com/champions/), and (na.op.gg/champion/statistics)
 
 Displays checks for matchup, healing, cc, and damage type
@@ -15,7 +15,7 @@ import ritoapi
 b1, b2, b3, b4, b5 = ["" for _ in range(5)]
 r1, r2, r3, r4, r5 = ["" for _ in range(5)]
 
-print("=============== LoL Wincon Calculator v2.4 @austinyen56 ===============")
+print("=============== LoL Wincon Calculator v2.5 @austinyen56 ===============")
 print("------Please type everything in lowercase in one word---------\n")
 
 # -----------------Sorting team comp-------------
@@ -162,12 +162,9 @@ def roleCheck():
     # print("Red team: ", champRoleR) #Red team:  {'sona': 'supp', 'twitch': 'adc', 'morgana': 'mid', 'gragas': 'jg', 'renekton': 'top'}
     
     # ======================================= Analyitics, Calculating, and Printing =============================
-    
-    def formatPrintMatchup():
-        pass
 
     print("\n")
-    ONLYprintingtoFile("===============Generated from LoL Wincon Calculator v2.4 @austinyen56===============")
+    ONLYprintingtoFile("===============Generated from LoL Wincon Calculator v2.5 @austinyen56===============")
     printConsoleandOutfile("          =================Matchup=================")
 
     def get_champion_from_pos(val, x):
@@ -260,7 +257,7 @@ def manualorauto():
             modeBool = False
             champPrintB, champPrintR = autoRoleSort(pick)
             # Same as line 178, to add in the matchup stats, can consolidate/optimize in the future
-            ONLYprintingtoFile("===============Generated from LoL Wincon Calculator v2.4 @austinyen56===============")
+            ONLYprintingtoFile("===============Generated from LoL Wincon Calculator v2.5 @austinyen56===============")
             print("")
             printConsoleandOutfile("          =================Matchup=================")
             count = 0
