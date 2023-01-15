@@ -7,7 +7,7 @@ championNames = ['aatrox', 'ahri', 'akali', 'akshan', 'alistar', 'amumu', 'anivi
                  'azir', 'bard', 'belveth', 'blitzcrank', 'brand', 'braum', 'caitlyn', 'camille', 'cassiopeia', 'chogath', 'corki',
                  'darius', 'diana', 'draven', 'drmundo', 'ekko', 'elise', 'evelynn', 'ezreal', 'fiddlesticks', 'fiora',
                  'fizz', 'galio', 'gangplank', 'garen', 'gnar', 'gragas', 'graves', 'gwen', 'hecarim', 'heimerdinger',
-                 'illaoi', 'irelia', 'ivern', 'janna', 'jarvan', 'jax', 'jayce', 'jhin', 'jinx', 'kaisa', 'kalista',
+                 'illaoi', 'irelia', 'ivern', 'janna', 'jarvan', 'jax', 'jayce', 'jhin', 'jinx', 'ksante', 'kaisa', 'kalista',
                  'karma', 'karthus', 'kassadin', 'katarina', 'kayle', 'kayn', 'kennen', 'khazix', 'kindred', 'kled',
                  'kogmaw', 'leblanc', 'leesin', 'leona', 'lillia', 'lissandra', 'lucian', 'lulu', 'lux', 'malphite',
                  'malzahar', 'maokai', 'masteryi', 'missfortune', 'wukong', 'mordekaiser', 'morgana', 'nami', 'nasus',
@@ -641,6 +641,17 @@ CHAMPION = {
         "counters": ['draven', 'ziggs'],
         "crushes": ['kalista', 'aphelios']
     },
+    "ksante": {
+        "mainRole": 'top',
+        "altRole": 'supp',
+        "cc": '3',
+        "knockup": '1',
+        "healing": '1',
+        "dmgtype": 'ad',
+        "role": 'tank',
+        "counters": ['zac', 'chogath'],
+        "crushes": ['aatrox', 'pantheon']
+    },    
     "kaisa": {
         "mainRole": 'adc',
         "altRole": 'none',
